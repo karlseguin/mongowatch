@@ -1,0 +1,10 @@
+include mixins/form-helpers
+#narrow
+  h3 Please enter your email and password
+    
+  form(method='post', action='/')
+    div
+      mixin field('username', 'text')
+      mixin field('password', 'password')
+    .buttons
+      input.button(type='submit', value='login')

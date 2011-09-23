@@ -1,0 +1,8 @@
+mixin field(name, type, field)
+  - var field = field || name;
+  - var value = type != 'password' && typeof(params) != 'undefined' ?  params[field] : ''
+  .item
+    label(for=field)=field
+    input(name=field, type=type, value=value)
+    - if (typeof(validation_errors) != 'undefined' && validation_errors[field])
+      label.error=validation_errors[field]

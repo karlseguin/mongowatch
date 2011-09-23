@@ -1,0 +1,19 @@
+- headerSection.set('<script type="text/javascript" src="/javascripts/stats.js"></script>')
+- if (stats.length == 0)
+  #error No statistics have been collected
+- else
+  include mixins/stat-helpers
+  #full
+    mixin help
+    h3 Server Overview
+    table#stats
+      thead
+        tr
+          th server
+          mixin genericStatColumnHeaders
+      tbody
+        each stat in stats
+          tr(data-server=stat.server)
+            td= stat.server
+            mixin genericStatColumns(stat.data[0])
+    

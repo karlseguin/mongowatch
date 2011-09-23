@@ -1,0 +1,63 @@
+mixin genericStatColumnHeaders
+  th uptime
+  th lock %
+  th timeouts
+  th resident
+  th virtual
+  th mapped
+  th v/m
+  th idx hit %
+  th ins
+  th qry
+  th updt
+  th del
+  th more
+  th cmd
+
+mixin genericStatColumns(data)
+  td= data.uptime
+  td= ((data.globalLock.lockTime / data.globalLock.totalTime) * 100).toFixed(4)
+  td= data.cursors.timedOut
+  td= data.mem.resident
+  td= data.mem.virtual
+  td= data.mem.mapped
+  td= (data.mem.virtual / data.mem.mapped).toFixed(4)
+  td= ((data.indexCounters.btree.hits / data.indexCounters.btree.accesses)*100).toFixed(2)
+  td= data.opcounters.insert
+  td= data.opcounters.query
+  td= data.opcounters.update 
+  td= data.opcounters.delete
+  td= data.opcounters.getmore
+  td= data.opcounters.command
+  
+mixin help
+  img#helpImage(src='/images/help.png')
+  
+  #help
+    div
+      label uptime
+      div Number of seconds the mongod process has been running
+    div
+      label lock %
+      div Percentage of time the global lock has been held since it was created
+    div
+      label timeouts
+      div Number of cursors which have timed out
+    div
+      label resident
+      div Amount of memory (MB) which MongoDB is using. Over time, on a dedicated machine, this should approach the total physical memory available.
+    div
+      label virtual
+      div Amount of virtual memory (MB) which MongoDB is using.
+    div
+      label mapped
+      div Size (MB) of memory mapped files. This number should be similar to your total database(s) size.
+    div
+      label v/m
+      div Virtual vs mapped ratio. Over time, this value should be fairly constant. Relative to total system memory, this value should be small. With journaling enabled, mapped should be roughly twice the size of virtual.
+    div
+      label idx hit %
+      div Percentage of hits for which an index pages were in memory vs the total number of index hits. Values less than 100% might indicate that your working set does not fit in memory.
+    div
+      label ins qry updt del more cmd
+      div The total number of inserts, queries, updates, deletes, getMore or commands performed since this process started

@@ -1,0 +1,10 @@
+--- 
+host: 0.0.0.0
+port: 3000
+
+key: 4e7c1e09f8dd19f036000001
+secret: "!gJ#<b8BXwD:f(nf*;\\b[vW"
+servers: 
+- name: linode1
+  port: 27017
+  address: 127.0.0.1

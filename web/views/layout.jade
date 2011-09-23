@@ -1,0 +1,28 @@
+!!!
+html
+  head
+    title mongo watch
+    link(rel='stylesheet', href='/stylesheets/mw.css')
+    script(type='text/javascript', src='//ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js')
+    script(type='text/javascript', src='/javascripts/mw.js')
+    !{headerSection.get()}
+  body
+    #header
+      - if (isLoggedIn)
+        #menu
+          div
+            a(href='/stats') servers
+            a(href='/logout') logout
+          
+    - if (typeof(error) != 'undefined')
+      #error=error
+
+    div!= body
+    
+    img#leaf(src='/images/leaf.png')
+
+    #footer
+      div
+        a(href='/about') about
+        a(href='http://github.com/karlseguin/mongowatch') fork it
+        a(href='http://openmymind.net') openmymind.net

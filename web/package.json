@@ -1,0 +1,15 @@
+{
+    "name": "mongowatch", 
+    "version": "0.0.1", 
+    "private": true, 
+    "dependencies": {
+      "express": "2.4.6",
+      "jade": ">= 0.15.3",
+      "mongodb": ">= 0.9.6",
+      "hashlib": ">= 0.0.1",
+      "cookie-sessions": ">= 0.0.1",
+      "bcrypt": ">= 0.2.4",
+      "node-dateformat": "https://github.com/felixge/node-dateformat/tarball/v1.0.0",
+      "msgpack": "https://github.com/karlseguin/node-msgpack/tarball/master"
+  }
+}

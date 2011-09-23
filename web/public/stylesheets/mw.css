@@ -31,7 +31,7 @@ a:hover{text-decoration:underline}
 #narrow {width:600px;margin-top:50px;box-shadow:0 1px 7px #aaa;border-color:#bbb;border-radius:5px;}
 #narrow h3{padding:10px 30px;margin:0;}
 #narrow div.error{padding:5px 30px;color:#f44;}
-#narrow form > div {padding:15px 30px;}
+#narrow form > div {padding:5px 30px;}
 #narrow div.buttons {position:relative;background:#eee;padding:15px 30px;border-top:1px solid #bbb;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}
 
 form div.item{position:relative;margin-bottom:25px;}

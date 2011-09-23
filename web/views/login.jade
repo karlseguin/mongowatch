@@ -4,7 +4,11 @@ include mixins/form-helpers
     
   form(method='post', action='/')
     div
-      mixin field('username', 'text')
-      mixin field('password', 'password')
+    .item
+      label(for='username') username
+      input(name='username', type='text')
+    .item
+      label(for='password') password
+      input(name='password', type='password')
     .buttons
       input.button(type='submit', value='login')

@@ -1,6 +1,9 @@
 *{padding:0;margin:0}
-body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;background:#fff}
+body{font-family:verdana,Helvetica,Arial,sans-serif;font-size:13px;line-height:18px;background:#fff}
 img{border:none}
+h2{margin-bottom:10px;font-weight:normal;}
+h4{color:#333;margin-bottom:5px;font-weight:normal;}
+p{line-height:150%;margin-bottom:25px;}
 a{text-decoration:none;color:#c35617;}
 a:hover{text-decoration:underline}
 
@@ -24,6 +27,7 @@ a:hover{text-decoration:underline}
 #full, #narrow {width:90%;margin:5px auto;position:relative;}
 #full {padding:30px;}
 #full h3{color:#444;padding:10px 5px;}
+#about {font-size:120%;color:#555;}
 #narrow {width:600px;margin-top:50px;box-shadow:0 1px 7px #aaa;border-color:#bbb;border-radius:5px;}
 #narrow h3{padding:10px 30px;margin:0;}
 #narrow div.error{padding:5px 30px;color:#f44;}

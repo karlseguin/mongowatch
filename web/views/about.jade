@@ -1,0 +1,19 @@
+#full
+  #about
+    h2 Overview
+    p MongoWatch is a [hopefully useful] attempt at killing three birds with one stone.
+    
+    h4 A Monitoring Tool
+    p First, and most obviously, MongoWatch tracks a handful of high level statistics about one of more MongoDB instance. For those familiar with MongoDB, the idea is to have a central place to store and review historical <code>db.serverStatus</code> results. This information is useful in providing a high-level trending overview of your MongoDB instance.
+    
+    h4 Compressed Blobs
+    p Secondly, MongoWatch served as a test bed for using MongoDB as a multi-key value store. A what? Basically I wanted to explore creating a compressed blob of data for any field which isn't queries. The purpose, which I hope to use on a more serious project, is to improving performance and reducing storage requirements. This is something that'll hopefully be available in MongoDB <a href="https://jira.mongodb.org/browse/SERVER-164">at some point</a>. I <a href="http://openmymind.net/2011/9/23/Compressed-Blobs-In-MongoDB">wrote a blog post</a> about it.
+    
+    h4 Learning Node
+    p Finally, I wanted to play more with node.js. Man, I feel like I really suck at it. Oh well. If MongoWatch seems a little heavy in places (like request signing), it's just because I wanted to play with something not overly trivial.
+    
+    h4 Source
+    p The source code is available at <a href="https://github.com/karlseguin/mongowatch">https://github.com/karlseguin/mongowatch</a> with installation instructions at <a href="http://watch.mongly.com">http://watch.mongly.com</a>.
+    
+    h4 Somewhat Related....
+    p If you find this interesting, you might also enjoy a <a href="http://spy.mongly.com">MongoSpy</a> which lets you develop with the MongoDB Profiler shown in your browser's console .

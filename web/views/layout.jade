@@ -8,12 +8,15 @@ html
     !{headerSection.get()}
   body
     #header
-      - if (isLoggedIn)
         #menu
           div
-            a(href='/stats') servers
-            a(href='/logout') logout
-          
+            - if (isLoggedIn)
+              a(href='/stats') servers
+              a(href='/logout') logout
+            - else
+              a(href='/about') about
+              a(href='/') login
+                    
     - if (typeof(error) != 'undefined')
       #error=error
 
@@ -23,6 +26,5 @@ html
 
     #footer
       div
-        a(href='/about') about
         a(href='http://github.com/karlseguin/mongowatch') fork it
         a(href='http://openmymind.net') openmymind.net

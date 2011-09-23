@@ -1,1 +1,72 @@
-coming soon
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MongoWatch</title>
+    <link href="assets/site.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/site.js"></script>
+  </head>
+  <body>
+    <div id="content">
+      <h2>About MongoWatch</h2>
+      <p>MongoWatch tracks a handful of high level statistics about one or more MongoDB instances. For those familiar with MongoDB, the idea is to have a central place to store and review historical <code>db.serverStatus</code> results. This information is useful in providing a high-level trending overview of your MongoDB instances. See a demo at <a href="http://watch.demo.mongly.com">watch.demo.mongly.com</a></p> 
+      
+      <h2>Installation</h2>
+      <p>Installation is easy. First though, you'll want to <a href="https://github.com/joyent/node/wiki/Installation">install node.js</a> if you haven't already done so.</p>
+      
+      <h3>Step 1 - Set Things Up</h3>
+      <p>&raquo; clone the repository and install the dependencies
+      <pre>
+git clone git://github.com/karlseguin/mongowatch.git
+cd mongowatch
+npm install</pre>
+
+      <h3>Step 2 - Create A User</h3>
+      <p>&raquo; You might want to edit <code>config.js</code> to change the default port, MongoDB connection information or other settings. Take note of the <code>key</code> and <code>secret</code> which it generates</p>
+      <pre>node create_user.js USERNAME PASSWORD</pre>
+      
+      <h3>Step 3 - Start the Server </h3>
+      <p>&raquo; Not sure how to configure a node.js app to run? <a href="http://howtonode.org/deploying-node-upstart-monit">howtonode</a> has the answer. The simplest solution is: </p>
+      <pre>node web/app.js</pre>
+        
+      <h3>Step 4 - Deploy the Connector</h3>
+      <p>&raquo; edit <code>connectors/ruby/config.yml</code> to include your key, secret, and the connection information of both the server you just deployed and the mongodb server(s) to check. Deploy the connector to each cluster of servers you want monitored and run it daily.</p>
+    
+      <h2>More Info</h2>
+      <p>watch.demo.mongly.com is running the web application AND has 1 connector deployed for the server named <code>linode1</code>.  The connector runs once a day via crontab:</p>
+      <pre>9 2 * * * /opt/ruby/bin/ruby /opt/scripts/mongo_watch/mongo_watch.rb</pre>
+      <p>The connector configuration looks like:</p>
+      <pre>---
+host: watch.demo.mongly.com
+port: 80 
+
+key: MY KEY
+secret: 'MY SECRET'
+servers:
+  - name: linode1
+    port: 27017
+    address: 127.0.0.1</pre>
+    <p>Additionally, another server, somewhere else on the internet, has a similar cron job, and is using the following configuration:</p>
+    <pre>---
+host: watch.demo.mongly.com
+port: 80 
+
+key: MY KEY
+secret: 'MY SECRET'
+servers:
+- name: mogade1
+  port: 27017
+  address: 192.168.1.50
+- name: mogade2
+  port: 27017
+  address: 192.168.1.51</pre>
+    </div>
+    <img src="assets/leaf.png" id="leaf" />
+    <div id="footer">
+      <div>
+        <a href="http://github.com/karlseguin/mongowatch">fork it</a>
+        <a href="http://openmymind.net/">openmymind.net</a>
+      </div>
+    </div>
+  </body>
+</html>

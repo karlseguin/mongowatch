@@ -4,7 +4,7 @@
     p MongoWatch is a [hopefully useful] attempt at killing three birds with one stone.
     
     h4 A Monitoring Tool
-    p First, and most obviously, MongoWatch tracks a handful of high level statistics about one of more MongoDB instance. For those familiar with MongoDB, the idea is to have a central place to store and review historical <code>db.serverStatus</code> results. This information is useful in providing a high-level trending overview of your MongoDB instance.
+    p First, and most obviously, MongoWatch tracks a handful of high level statistics about one or more MongoDB instances. For those familiar with MongoDB, the idea is to have a central place to store and review historical <code>db.serverStatus</code> results. This information is useful in providing a high-level trending overview of your MongoDB instances.
     
     h4 Compressed Blobs
     p Secondly, MongoWatch served as a test bed for using MongoDB as a multi-key value store. A what? Basically I wanted to explore creating a compressed blob of data for any field which isn't queries. The purpose, which I hope to use on a more serious project, is to improving performance and reducing storage requirements. This is something that'll hopefully be available in MongoDB <a href="https://jira.mongodb.org/browse/SERVER-164">at some point</a>. I <a href="http://openmymind.net/2011/9/23/Compressed-Blobs-In-MongoDB">wrote a blog post</a> about it.
